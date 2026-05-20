@@ -1,0 +1,18 @@
+{
+  "workflow_id": "depositback-agent-tiktok-publisher-default",
+  "version": "1.0.0",
+  "agent": "tiktok-publisher",
+  "created": "2026-05-20T18:04:25.085924",
+  "description": "Default health-check workflow for TikTok Publisher",
+  "steps": [
+    {
+      "id": "health_check",
+      "skill": "noop",
+      "params": {
+        "message": "TikTok Publisher is operational"
+      }
+    }
+  ],
+  "on_success": "Write result to data/outbox/",
+  "on_failure": "Update state.json with error status"
+}
